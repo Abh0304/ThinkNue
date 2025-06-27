@@ -57,8 +57,8 @@
       <p class="text-xl text-gray-700 mb-10">Select your role to get started</p>
       
       <div id="btns" class="flex flex-wrap justify-center gap-6 mb-12">
-        <button id="ceo-btn" class="role-btn selected w-48 h-16 rounded-xl border-2 border-blue-200 bg-blue-500 text-white font-semibold text-lg">
-          StartUp CEO
+        <button id="ceo-btn" class="role-btn selected w-48 h-16 rounded-xl border-2 border-blue-200 bg-blue-500 text-white font-semibold text-lg"> 
+        Entrepreneur
         </button>
         <button id="investor-btn" class="role-btn w-48 h-16 rounded-xl border-2 border-blue-200 bg-white text-blue-500 font-semibold text-lg">
           Investor
@@ -66,7 +66,7 @@
       </div>
       
       <div id="ceo-content" class="content-section active">
-        <h2 class="text-2xl font-semibold text-gray-800 mb-4">For Startup CEOs</h2>
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">For Entrepreneurs </h2>
         <p class="text-gray-600">
           Access powerful tools to grow your startup with AI-driven insights, market analysis, and strategic planning.
         </p>
@@ -87,46 +87,57 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const ceoBtn = document.getElementById('ceo-btn');
-      const investorBtn = document.getElementById('investor-btn');
-      const ceoContent = document.getElementById('ceo-content');
-      const investorContent = document.getElementById('investor-content');
-      const continueBtn = document.getElementById('continue-btn');
-      
-      ceoBtn.addEventListener('click', function() {
-        ceoBtn.classList.add('selected');
-        ceoBtn.classList.remove('bg-white', 'text-blue-500');
-        ceoBtn.classList.add('bg-blue-500', 'text-white');
-        
-        investorBtn.classList.remove('selected');
-        investorBtn.classList.add('bg-white', 'text-blue-500');
-        investorBtn.classList.remove('bg-blue-500', 'text-white');
-        
-        ceoContent.classList.add('active');
-        investorContent.classList.remove('active');
-      });
-      
-      investorBtn.addEventListener('click', function() {
-        investorBtn.classList.add('selected');
-        investorBtn.classList.remove('bg-white', 'text-blue-500');
-        investorBtn.classList.add('bg-blue-500', 'text-white');
-        
-        ceoBtn.classList.remove('selected');
-        ceoBtn.classList.add('bg-white', 'text-blue-500');
-        ceoBtn.classList.remove('bg-blue-500', 'text-white');
-        
-        investorContent.classList.add('active');
-        ceoContent.classList.remove('active');
-      });
-      
-      continueBtn.addEventListener('click', function() {
-        if (ceoBtn.classList.contains('selected')) {
-          window.location.href = "ceos-dashboard.html";
-        } else {
-          window.location.href = "investors-dashboard.html";
-        }
-      });
-    });
+  const ceoBtn = document.getElementById('ceo-btn');
+  const investorBtn = document.getElementById('investor-btn');
+  const ceoContent = document.getElementById('ceo-content');
+  const investorContent = document.getElementById('investor-content');
+  const continueBtn = document.getElementById('continue-btn');
+  
+  // Initialize selectedRole based on which button has the 'selected' class
+  let selectedRole = ceoBtn.classList.contains('selected') ? 'entrepreneur' : 'investor';
+  
+  ceoBtn.addEventListener('click', function() {
+    ceoBtn.classList.add('selected');
+    ceoBtn.classList.remove('bg-white', 'text-blue-500');
+    ceoBtn.classList.add('bg-blue-500', 'text-white');
+    
+    investorBtn.classList.remove('selected');
+    investorBtn.classList.add('bg-white', 'text-blue-500');
+    investorBtn.classList.remove('bg-blue-500', 'text-white');
+    
+    ceoContent.classList.add('active');
+    investorContent.classList.remove('active');
+    
+    selectedRole = 'entrepreneur'; // Update the selected role
+  });
+  
+  investorBtn.addEventListener('click', function() {
+    investorBtn.classList.add('selected');
+    investorBtn.classList.remove('bg-white', 'text-blue-500');
+    investorBtn.classList.add('bg-blue-500', 'text-white');
+    
+    ceoBtn.classList.remove('selected');
+    ceoBtn.classList.add('bg-white', 'text-blue-500');
+    ceoBtn.classList.remove('bg-blue-500', 'text-white');
+    
+    investorContent.classList.add('active');
+    ceoContent.classList.remove('active');
+    
+    selectedRole = 'investor'; // Update the selected role
+  });
+  
+  continueBtn.addEventListener('click', function() {
+    // Store the selected role in localStorage
+    localStorage.setItem('selectedRole', selectedRole);
+    
+    // Navigate to the appropriate dashboard
+    if (selectedRole === 'entrepreneur') {
+      window.location.href = "ceos-dashboard.html";
+    } else {
+      window.location.href = "investors-dashboard.html";
+    }
+  });
+});
   </script>
 </body>
 </html>
