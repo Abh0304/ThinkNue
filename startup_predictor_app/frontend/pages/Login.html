@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ThinkNeu Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e6f0ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: white;
+      border-radius: 16px;
+      width: 400px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      border: 1px solid #b3d1ff;
+    }
+
+    .login-header {
+      background: #f5faff;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .login-header h2 {
+      margin: 0;
+      font-size: 2rem;
+      color: #003366;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 70px;
+    }
+
+    .login-body {
+      background: #ffffff;
+      padding: 30px;
+    }
+
+    .input-group {
+      background: #e6f0ff;
+      border-radius: 30px;
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      border: 1px solid #b3d1ff;
+    }
+
+    .input-group i {
+      margin-right: 12px;
+      color: #3366cc;
+    }
+
+    .input-group input {
+      border: none;
+      outline: none;
+      background: transparent;
+      width: 100%;
+      font-size: 1rem;
+      color: #003366;
+    }
+
+    .login-button {
+      background: #3366cc;
+      border: none;
+      border-radius: 30px;
+      width: 100%;
+      padding: 14px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login-button:hover {
+      background: #254e99;
+    }
+
+    .login-footer {
+      background: #f5faff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.95rem;
+    }
+
+    .login-footer a {
+      color: #003366;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .login-footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 450px) {
+      .login-container {
+        width: 90%;
+      }
+
+      .logo {
+        width: 50px;
+      }
+
+      .login-header h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-header">
+      <h2>Login</h2>
+      
+    </div>
+    <div class="login-body">
+      <div class="input-group">
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="Username" />
+      </div>
+      <div class="input-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" placeholder="Password" />
+      </div>
+      <button class="login-button">Login</button>
+    </div>
+    <div class="login-footer">
+      <a href="#">Forgot password</a>
+      <a href="register.html">Create an Account</a>
+    </div>
+  </div>
+</body>
+</html>

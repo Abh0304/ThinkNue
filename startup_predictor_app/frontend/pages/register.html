@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | ThinkNeu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #eaf4fb;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .header-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-left h2 {
+      color: #003366;
+      margin: 0;
+    }
+
+    .underline {
+      width: 100px;
+      border: none;
+      height: 3px;
+      background-color: #007bff;
+      margin-top: 5px;
+    }
+
+    .logo {
+      height: 60px;
+    }
+
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 6px;
+      color: #003366;
+      font-weight: 600;
+    }
+
+    input,
+    select {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #b3d9ff;
+      background-color: #f4faff;
+      font-size: 16px;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: #3399ff;
+      box-shadow: 0 0 5px #a3d1ff;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .footer a {
+      color: #007bff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .form-row {
+        flex-direction: column;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .logo {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div class="header-left">
+        <h2>Register</h2>
+        <hr class="underline" />
+      </div>
+      <img src="logo.png" alt="Logo" class="logo" />
+    </div>
+
+    <form>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" required id="name" placeholder="Your full name" />
+        </div>
+        <div class="form-group">
+          <label for="wallet">X Profile</label>
+          <input type="text" required id="wallet" placeholder="X profile Id" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Mail ID</label>
+          <input type="email" required id="email" placeholder="Email address" />
+        </div>
+        <div class="form-group">
+          <label for="recovery">Recovery Phone No</label>
+          <input type="tel" required id="recovery" placeholder="Recovery number" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone No</label>
+          <input type="tel" required id="phone" placeholder="Primary number" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" required id="password" placeholder="Enter password" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select id="role">
+            <option value="">Select Role</option>
+            <option value="entrepreneur">Entrepreneur</option>
+            <option value="investor">Investor</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="confirm">Confirm Password</label>
+          <input type="password" required id="confirm" placeholder="Confirm password" />
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+
+    <div class="footer">
+      <a href="#">Terms of services</a> |
+      <a href="#">Privacy Policy</a> |
+      <a href="#"><img src="x-icon.png" width="16" /></a>
+      <a href="#"><img src="whatsapp-icon.png" width="16" /></a>
+      <a href="#"><img src="instagram-icon.png" width="16" /></a>
+    </div>
+  </div>
+
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const selectedRole = localStorage.getItem('selectedRole');
+    const roleSelect = document.getElementById('role');
+    
+    if (selectedRole) {
+      roleSelect.value = selectedRole;
+    }
+  });
+</script>
+</html>
