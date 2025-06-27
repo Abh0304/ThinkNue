@@ -1,0 +1,224 @@
+<html>
+  <head>
+    <title>ThinkNeu - Investor Platform</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      :target {
+        scroll-margin-top: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: sans-serif;'>
+      <!-- Fixed Header -->
+      <header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7edf4] px-10 py-3 bg-white h-16">
+        <div class="flex items-center gap-4 text-[#0d141c]">
+          <div class="size-4">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48ZM28.5 16.5C28.5 18.9853 26.4853 21 24 21C21.5147 21 19.5 18.9853 19.5 16.5C19.5 14.0147 21.5147 12 24 12C26.4853 12 28.5 14.0147 28.5 16.5ZM24 27C29.663 27 35.0795 29.4911 39.0711 33.4827C41.368 35.7796 41.368 39.5204 39.0711 41.8173C36.7742 44.1142 33.0334 44.1142 30.7365 41.8173C27.7449 38.8257 23.2551 38.8257 20.2635 41.8173C17.9658 44.1142 14.2258 44.1142 11.9289 41.8173C9.63204 39.5204 9.63204 35.7796 11.9289 33.4827C15.9205 29.4911 21.337 27 24 27Z"
+                fill="#0c7ff2"
+              ></path>
+            </svg>
+          </div>
+          <h2 class="text-[#0d141c] text-lg font-bold leading-tight tracking-[-0.015em]">ThinkNeu Investors</h2>
+        </div>
+        <div class="flex flex-1 justify-end gap-8">
+          <div class="flex items-center gap-9">
+            <a class="text-[#0d141c] text-sm font-medium leading-normal hover:text-[#0c7ff2] transition-colors" href="#features">Features</a>
+            <a class="text-[#0d141c] text-sm font-medium leading-normal hover:text-[#0c7ff2] transition-colors" href="#working">Working</a>
+            <a class="text-[#0d141c] text-sm font-medium leading-normal hover:text-[#0c7ff2] transition-colors" href="#contact">Contacts</a>
+          </div>
+          <div class="flex gap-2">
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0c7ff2] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#0a6bc9] transition-colors"
+            >
+              <span class="truncate"><a href="register.html">Get Started</a></span>
+            </button>
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e7edf4] text-[#0d141c] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#d0d8e2] transition-colors"
+            >
+              <span class="truncate"><a href="Login.html">Log In</a></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <div class="layout-container flex h-full grow flex-col pt-16">
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="@container">
+              <div class="@[480px]:p-4">
+                <div
+                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-start justify-end px-4 pb-10 @[480px]:px-10"
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");'
+                >
+                  <div class="flex flex-col gap-2 text-left">
+                    <h1
+                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                    >
+                      Smarter Investment Decisions
+                    </h1>
+                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                      ThinkNeu empowers investors with AI-driven insights to identify high-potential startups. Analyze market trends, assess risks, and optimize your investment portfolio with our advanced platform.
+                    </h2>
+                  </div>
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#0c7ff2] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-[#0a6bc9] transition-colors"
+                  >
+                    <span class="truncate"><a href="register.html">Get Started</a></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-10 px-4 py-10 @container">
+              <div class="flex flex-col gap-4">
+                <h1
+                   id="features" class="text-[#0d141c] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+                >
+                  Investor Features
+                </h1>
+                <p class="text-[#0d141c] text-base font-normal leading-normal max-w-[720px]">ThinkNeu provides powerful tools to help investors identify and evaluate high-potential startups.</p>
+              </div>
+              <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-0">
+                <div class="flex flex-1 gap-3 rounded-lg border border-[#cedbe8] bg-slate-50 p-4 flex-col hover:shadow-md transition-shadow">
+                  <div class="text-[#0d141c]" data-icon="ChartLineUp" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V94.37l58.21-29.11a8,8,0,0,1,7.58,0L128,85.05l62.21-31.11a8,8,0,0,1,7.16,14.32L136,99.05l-58.21-29.11a8,8,0,0,1-7.58,0L40,107.05V200H224A8,8,0,0,1,232,208Z"></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-[#0d141c] text-base font-bold leading-tight">Portfolio Analytics</h2>
+                    <p class="text-[#49739c] text-sm font-normal leading-normal">Track performance and growth metrics across your investments.</p>
+                  </div>
+                </div>
+                <div class="flex flex-1 gap-3 rounded-lg border border-[#cedbe8] bg-slate-50 p-4 flex-col hover:shadow-md transition-shadow">
+                  <div class="text-[#0d141c]" data-icon="Binoculars" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M237,181.66A15.89,15.89,0,0,1,224,192H192v24a8,8,0,0,1-16,0V192H80v24a8,8,0,0,1-16,0V192H32a16,16,0,0,1-13-25.66L64,116.69V88a40,40,0,0,1,80,0v28.69l45,50.35A15.9,15.9,0,0,1,237,181.66ZM128,48a24,24,0,0,0-24,24v36.69l-32,35.84V184h56V152a8,8,0,0,1,16,0v32h56V144.53l-32-35.84V72A24,24,0,0,0,128,48Z"></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-[#0d141c] text-base font-bold leading-tight">Deal Sourcing</h2>
+                    <p class="text-[#49739c] text-sm font-normal leading-normal">Discover promising startups matching your investment criteria.</p>
+                  </div>
+                </div>
+                <div class="flex flex-1 gap-3 rounded-lg border border-[#cedbe8] bg-slate-50 p-4 flex-col hover:shadow-md transition-shadow">
+                  <div class="text-[#0d141c]" data-icon="TrendUp" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M240,56v64a8,8,0,0,1-16,0V75.31l-82.34,82.35a8,8,0,0,1-11.32,0L96,123.31,29.66,189.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0L136,140.69,212.69,64H168a8,8,0,0,1,0-16h64A8,8,0,0,1,240,56Z"></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-[#0d141c] text-base font-bold leading-tight">Growth Potential</h2>
+                    <p class="text-[#49739c] text-sm font-normal leading-normal">Identify startups with the highest growth trajectories.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-10 px-4 py-10 @container">
+              <div class="flex flex-col gap-4">
+                <h1 id="working"
+                  class="text-[#0d141c] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+                >
+                  How It Works
+                </h1>
+                <p class="text-[#0d141c] text-base font-normal leading-normal max-w-[720px]">Our platform simplifies the investment evaluation process.</p>
+              </div>
+              <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3">
+                <div class="flex flex-col gap-3 pb-3 hover:scale-[1.02] transition-transform">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                    style='background-image: url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");'
+                  ></div>
+                  <div>
+                    <p class="text-[#0d141c] text-base font-medium leading-normal">Discover</p>
+                    <p class="text-[#49739c] text-sm font-normal leading-normal">Find promising startups matching your investment thesis.</p>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-3 pb-3 hover:scale-[1.02] transition-transform">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                    style='background-image: url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");'
+                  ></div>
+                  <div>
+                    <p class="text-[#0d141c] text-base font-medium leading-normal">Evaluate</p>
+                    <p class="text-[#49739c] text-sm font-normal leading-normal">Get comprehensive due diligence reports and metrics.</p>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-3 pb-3 hover:scale-[1.02] transition-transform">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                    style='background-image: url("https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");'
+                  ></div>
+                  <div>
+                    <p class="text-[#0d141c] text-base font-medium leading-normal">Invest</p>
+                    <p class="text-[#49739c] text-sm font-normal leading-normal">Make data-driven investment decisions with confidence.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="@container">
+              <div class="flex flex-col justify-end gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
+                <div class="flex flex-col gap-2 text-center">
+                  <h1
+                    class="text-[#0d141c] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+                  >
+                    Ready to Transform Your Investment Strategy?
+                  </h1>
+                  <p class="text-[#0d141c] text-base font-normal leading-normal max-w-[720px]">Join ThinkNeu Investors today and unlock smarter startup investing.</p>
+                </div>
+                <div class="flex flex-1 justify-center">
+                  <div class="flex justify-center">
+                    <button
+                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#0c7ff2] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow hover:bg-[#0a6bc9] transition-colors"
+                    >
+                      <span class="truncate"><a href="register.html">Get Started</a></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="flex justify-center">
+          <div class="flex max-w-[960px] flex-1 flex-col">
+            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+                <a class="text-[#49739c] text-base font-normal leading-normal min-w-40 hover:text-[#0c7ff2] transition-colors" href="#" id="contact">Contact Us</a>
+              </div>
+              <div class="flex flex-wrap justify-center gap-4">
+                <a href="#">
+                  <div class="text-[#49739c] hover:text-[#0c7ff2] transition-colors" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="text-[#49739c] hover:text-[#0c7ff2] transition-colors" data-icon="LinkedinLogo" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+              <p class="text-[#49739c] text-base font-normal leading-normal">© 2025 ThinkNeu Investors. All rights reserved.</p>
+            </footer>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
