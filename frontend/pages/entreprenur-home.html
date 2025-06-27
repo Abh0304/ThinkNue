@@ -1,0 +1,79 @@
+<!-- ---------- entrepreneurHome.html ---------- -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThinkNeu – Entrepreneur Home</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+</head>
+
+<body class="min-h-screen flex flex-col bg-slate-50 font-sans text-[#0d141c]">
+
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-between border-b border-slate-200 bg-white/90 px-6 backdrop-blur">
+    <a class="flex items-center gap-2">
+      <svg class="size-5 text-[#0c7ff2]" viewBox="0 0 48 48" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48ZM28.5 16.5C28.5 18.9853 26.4853 21 24 21C21.5147 21 19.5 18.9853 19.5 16.5C19.5 14.0147 21.5147 12 24 12C26.4853 12 28.5 14.0147 28.5 16.5ZM24 27C29.663 27 35.0795 29.4911 39.0711 33.4827C41.368 35.7796 41.368 39.5204 39.0711 41.8173C36.7742 44.1142 33.0334 44.1142 30.7365 41.8173C27.7449 38.8257 23.2551 38.8257 20.2635 41.8173C17.9658 44.1142 14.2258 44.1142 11.9289 41.8173C9.63204 39.5204 9.63204 35.7796 11.9289 33.4827C15.9205 29.4911 21.337 27 24 27Z"/>
+      </svg>
+      <span class="text-lg font-bold tracking-tight">ThinkNeu</span>
+    </a>
+    <!-- logout just sends them to the login page -->
+    <a href="login.html" class="rounded-lg bg-[#0c7ff2] px-4 py-2 text-sm font-semibold text-white shadow hover:bg-[#0a6bc9]">
+      Log out
+    </a>
+  </header>
+<main class="flex flex-1 flex-col items-center justify-center pt-32 pb-10 px-6">
+  <h1 class="text-4xl font-extrabold mb-6 text-center">Welcome, Entrepreneur!</h1>
+  <p class="text-lg text-slate-600 mb-10 text-center max-w-xl">
+    Share your vision or test it with AI. Choose an action below:
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl">
+
+    <!-- Add a Startup Card -->
+    <div class="bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center text-center border border-[#0c7ff2]/20">
+      <h2 class="text-2xl font-bold mb-3 text-[#0c7ff2]">🚀 Add a Startup</h2>
+      <p class="mb-4 text-slate-600">Fill in your startup idea and get matched with interested investors.</p>
+      <button
+        onclick="location.href='http://localhost:5500/entreprenur.html'"
+        class="mt-auto px-6 py-3 bg-[#0c7ff2] text-white font-semibold rounded-lg hover:bg-[#0a6bc9] transition">
+        Go to Form
+      </button>
+    </div>
+
+    <!-- Simulate Startup Card -->
+    <div class="bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center text-center border border-green-600/20">
+      <h2 class="text-2xl font-bold mb-3 text-green-600">🤖 Simulate Startup</h2>
+      <p class="mb-4 text-slate-600">Test your idea through AI-driven simulation and insights.</p>
+      <button
+        onclick="simulateStartup()"
+        class="mt-auto px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition">
+        Run Simulation
+      </button>
+    </div>
+
+  </div>
+</main>
+
+<script>
+  function simulateStartup() {
+    // 🔧 PLACEHOLDER for simulation logic
+    // Your friend can plug the ML model trigger here (backend call or frontend ML function)
+    console.log("Simulation triggered");
+    alert("Simulation started (this is a placeholder).");
+
+    // Example stub (can be replaced)
+    // fetch('/simulate-startup', { method: 'POST' })
+    //   .then(res => res.json())
+    //   .then(data => alert(data.message))
+    //   .catch(err => alert("Simulation failed."));
+  }
+</script>
+
+  <footer class="border-t border-slate-200 bg-white py-6 text-center text-sm text-slate-500">
+    © 2025 ThinkNeu. All rights reserved.
+  </footer>
+</body>
+</html>

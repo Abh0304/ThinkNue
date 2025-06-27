@@ -1,0 +1,77 @@
+<!-- ---------- public/entrepreneur.html ---------- -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThinkNeu – Entrepreneur Portal</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+</head>
+
+<body class="min-h-screen flex flex-col items-center bg-slate-50 p-6">
+  <h1 class="text-3xl font-bold mb-6">Submit Your Startup</h1>
+
+  <form id="startupForm" class="w-full max-w-xl bg-white p-6 rounded-lg shadow">
+    <!-- Startup Name -->
+    <div class="mb-4">
+      <label class="block font-medium mb-1" for="startup_name">Startup Name</label>
+      <input id="startup_name" name="startup_name" type="text" required class="w-full border rounded px-3 py-2" />
+    </div>
+
+    <!-- Author -->
+    <div class="mb-4">
+      <label class="block font-medium mb-1" for="author">Author</label>
+      <input id="author" name="author" type="text" required class="w-full border rounded px-3 py-2" />
+    </div>
+
+    <!-- Description -->
+    <div class="mb-4">
+      <label class="block font-medium mb-1" for="description">Description</label>
+      <textarea id="description" name="description" rows="4" required class="w-full border rounded px-3 py-2"></textarea>
+    </div>
+
+    <!-- Prediction -->
+    <div class="mb-6">
+      <label class="block font-medium mb-1" for="prediction">Prediction (optional)</label>
+      <input id="prediction" name="prediction" type="number" step="0.01" class="w-full border rounded px-3 py-2" />
+    </div>
+
+    <button type="submit" class="w-full bg-blue-600 text-white rounded py-2 font-semibold hover:bg-blue-700">
+      Submit
+    </button>
+
+    <p id="message" class="mt-4 text-center text-green-600 hidden">Startup submitted! 🎉</p>
+  </form>
+
+  <script>
+    const form = document.getElementById('startupForm');
+    const msg  = document.getElementById('message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const payload = {
+        startup_name: form.startup_name.value.trim(),
+        author      : form.author.value.trim(),
+        description : form.description.value.trim(),
+        prediction  : form.prediction.value ? Number(form.prediction.value) : null,
+      };
+
+      const res = await fetch('/startups', {
+        method : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body   : JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        form.reset();
+        msg.classList.remove('hidden');
+        setTimeout(() => msg.classList.add('hidden'), 4000);
+      } else {
+        const err = await res.json();
+        alert(err.error || 'Error submitting startup');
+      }
+    });
+  </script>
+</body>
+</html>

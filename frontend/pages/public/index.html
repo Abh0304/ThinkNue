@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Investor Home – ThinkNeu</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    let startups = [];
+    let current = 0;
+
+    async function loadStartups() {
+      const res = await fetch('/startups');
+      startups = await res.json();
+      showStartup();
+    }
+
+    function showStartup() {
+      const wrap = document.getElementById('content');
+      if (!startups.length || current >= startups.length) {
+        wrap.innerHTML = `<p class="text-center text-gray-500">🎉 No more startups to review.</p>`;
+        return;
+      }
+
+      const s = startups[current];
+      wrap.innerHTML = `
+        <article class="bg-white p-6 rounded-xl shadow max-w-2xl mx-auto">
+          <h2 class="text-2xl font-bold text-blue-800 mb-2">${s.startup_name}</h2>
+          <p class="mb-1"><strong>Author:</strong> ${s.author}</p>
+          <p class="mb-3 text-gray-700"><strong>Description:</strong> ${s.description}</p>
+          <p class="mb-4"><strong>Prediction:</strong> ${s.prediction ?? 'No prediction'}</p>
+          <div class="flex gap-3 justify-end mt-6">
+            <button onclick="handleAction('dislike')" class="bg-red-100 text-red-600 px-4 py-2 rounded hover:bg-red-200">Dislike</button>
+            <button onclick="handleAction('like')" class="bg-green-100 text-green-600 px-4 py-2 rounded hover:bg-green-200">Like</button>
+            <button onclick="handleConnect()" class="bg-blue-100 text-blue-600 px-4 py-2 rounded hover:bg-blue-200">Connect</button>
+          </div>
+        </article>
+      `;
+    }
+
+    function handleAction(action) {
+      const currentStartup = startups[current];
+      console.log(`${action.toUpperCase()}:`, currentStartup);
+      // You can optionally POST to /like or /dislike routes here
+      current++;
+      showStartup();
+    }
+
+    function handleConnect() {
+      const currentStartup = startups[current];
+      alert(`Connecting to founder of "${currentStartup.startup_name}"...`);
+      // You can replace this with real logic (chat, email, etc.)
+    }
+  </script>
+</head>
+
+<body onload="loadStartups()" class="bg-slate-50 p-6 min-h-screen">
+  <header class="text-center mb-8">
+    <h1 class="text-3xl font-extrabold text-blue-900 mb-2">Investor Home</h1>
+    <p class="text-gray-600">Review startups one by one. Like, Dislike or Connect with them.</p>
+  </header>
+
+  <main id="content" class="max-w-3xl mx-auto"></main>
+</body>
+</html>
