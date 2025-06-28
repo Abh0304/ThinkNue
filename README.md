@@ -34,7 +34,7 @@ startup_predictor_app/
 │   ├── Login.html               # User login
 │   ├── register.html            # User registration
 │   └── onboarding.html          # Role selector (Investor/Entrepreneur)
-├── static/                      # (Optional) for CSS/JS/image assets
+├── static/                      
 └── README.md
 ```
 
